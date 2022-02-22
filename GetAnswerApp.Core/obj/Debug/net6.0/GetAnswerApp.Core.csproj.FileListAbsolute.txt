@@ -1,0 +1,12 @@
+C:\Projects\GetAnswerApp\GetAnswerApp.Core\bin\Debug\net6.0\GetAnswerApp.Core.deps.json
+C:\Projects\GetAnswerApp\GetAnswerApp.Core\bin\Debug\net6.0\GetAnswerApp.Core.dll
+C:\Projects\GetAnswerApp\GetAnswerApp.Core\bin\Debug\net6.0\GetAnswerApp.Core.pdb
+C:\Projects\GetAnswerApp\GetAnswerApp.Core\obj\Debug\net6.0\GetAnswerApp.Core.csproj.AssemblyReference.cache
+C:\Projects\GetAnswerApp\GetAnswerApp.Core\obj\Debug\net6.0\GetAnswerApp.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\GetAnswerApp\GetAnswerApp.Core\obj\Debug\net6.0\GetAnswerApp.Core.AssemblyInfoInputs.cache
+C:\Projects\GetAnswerApp\GetAnswerApp.Core\obj\Debug\net6.0\GetAnswerApp.Core.AssemblyInfo.cs
+C:\Projects\GetAnswerApp\GetAnswerApp.Core\obj\Debug\net6.0\GetAnswerApp.Core.csproj.CoreCompileInputs.cache
+C:\Projects\GetAnswerApp\GetAnswerApp.Core\obj\Debug\net6.0\GetAnswerApp.Core.dll
+C:\Projects\GetAnswerApp\GetAnswerApp.Core\obj\Debug\net6.0\refint\GetAnswerApp.Core.dll
+C:\Projects\GetAnswerApp\GetAnswerApp.Core\obj\Debug\net6.0\GetAnswerApp.Core.pdb
+C:\Projects\GetAnswerApp\GetAnswerApp.Core\obj\Debug\net6.0\ref\GetAnswerApp.Core.dll

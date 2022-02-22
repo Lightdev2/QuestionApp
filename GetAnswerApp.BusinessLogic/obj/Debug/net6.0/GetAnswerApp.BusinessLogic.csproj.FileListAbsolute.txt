@@ -1,0 +1,12 @@
+C:\Projects\GetAnswerApp\GetAnswerApp.BusinessLogic\bin\Debug\net6.0\GetAnswerApp.BusinessLogic.deps.json
+C:\Projects\GetAnswerApp\GetAnswerApp.BusinessLogic\bin\Debug\net6.0\GetAnswerApp.BusinessLogic.dll
+C:\Projects\GetAnswerApp\GetAnswerApp.BusinessLogic\bin\Debug\net6.0\GetAnswerApp.BusinessLogic.pdb
+C:\Projects\GetAnswerApp\GetAnswerApp.BusinessLogic\obj\Debug\net6.0\GetAnswerApp.BusinessLogic.csproj.AssemblyReference.cache
+C:\Projects\GetAnswerApp\GetAnswerApp.BusinessLogic\obj\Debug\net6.0\GetAnswerApp.BusinessLogic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\GetAnswerApp\GetAnswerApp.BusinessLogic\obj\Debug\net6.0\GetAnswerApp.BusinessLogic.AssemblyInfoInputs.cache
+C:\Projects\GetAnswerApp\GetAnswerApp.BusinessLogic\obj\Debug\net6.0\GetAnswerApp.BusinessLogic.AssemblyInfo.cs
+C:\Projects\GetAnswerApp\GetAnswerApp.BusinessLogic\obj\Debug\net6.0\GetAnswerApp.BusinessLogic.csproj.CoreCompileInputs.cache
+C:\Projects\GetAnswerApp\GetAnswerApp.BusinessLogic\obj\Debug\net6.0\GetAnswerApp.BusinessLogic.dll
+C:\Projects\GetAnswerApp\GetAnswerApp.BusinessLogic\obj\Debug\net6.0\refint\GetAnswerApp.BusinessLogic.dll
+C:\Projects\GetAnswerApp\GetAnswerApp.BusinessLogic\obj\Debug\net6.0\GetAnswerApp.BusinessLogic.pdb
+C:\Projects\GetAnswerApp\GetAnswerApp.BusinessLogic\obj\Debug\net6.0\ref\GetAnswerApp.BusinessLogic.dll

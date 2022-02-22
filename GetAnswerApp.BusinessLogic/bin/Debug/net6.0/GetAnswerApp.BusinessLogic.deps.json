@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "GetAnswerApp.BusinessLogic/1.0.0": {
+        "runtime": {
+          "GetAnswerApp.BusinessLogic.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "GetAnswerApp.BusinessLogic/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
