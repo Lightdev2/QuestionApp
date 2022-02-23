@@ -1,3 +1,5 @@
+using GetAnswerApp.BusinessLogic.Services;
+using GetAnswerApp.Core.Services;
 using GetAnswerApp.DAL;
 using Microsoft.EntityFrameworkCore;
 
@@ -8,6 +10,8 @@ builder.Services.AddDbContext<GetAnswerAppContext>(options =>
 {
     options.UseNpgsql(builder.Configuration.GetConnectionString("GetAnswerAppContext"));
 });
+builder.Services.AddTransient<ITokenService, TokenService>();
+builder.Services.AddTransient<IAuthService, AuthService>();
 
 var app = builder.Build();
 

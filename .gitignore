@@ -1,2 +1,4 @@
+**/obj/
+**/bin/
 client/node_modules
 .vs

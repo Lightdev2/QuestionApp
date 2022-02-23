@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using GetAnswerApp.Core.DTOs;
+using GetAnswerApp.Core.Services;
+using Microsoft.AspNetCore.Mvc;
 
 namespace GetAnswerApp.Api.Controllers
 {
@@ -6,10 +8,25 @@ namespace GetAnswerApp.Api.Controllers
     [Route("/api/auth")]
     public class AuthController : ControllerBase
     {
-        [HttpGet]
-        public string Get()
+        private readonly IAuthService _authService;
+        public AuthController(IAuthService authService)
         {
-            return "Hello, world";
+            _authService = authService;
+        }
+
+        [HttpPost]
+        [Route("sign-up")]
+        public async Task<IActionResult> SignUp(NewUser user)
+        {
+            return Ok(_authService.SignUp(user));
+        }
+
+        [HttpPost]
+        [Route("sign-in")]
+        public async Task<IActionResult> SignIn(LoginRequest loginRequest)
+        {
+            var result = await _authService.SignIn(loginRequest);
+            return Ok(result);
         }
     }
 }
