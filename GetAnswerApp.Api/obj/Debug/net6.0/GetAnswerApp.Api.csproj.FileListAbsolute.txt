@@ -30,3 +30,11 @@ C:\Projects\GetAnswerApp\GetAnswerApp.Api\bin\Debug\net6.0\GetAnswerApp.DAL.pdb
 C:\Projects\GetAnswerApp\GetAnswerApp.Api\obj\Debug\net6.0\GetAnswerApp.Api.csproj.CopyComplete
 C:\Projects\GetAnswerApp\GetAnswerApp.Api\bin\Debug\net6.0\Humanizer.dll
 C:\Projects\GetAnswerApp\GetAnswerApp.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Projects\GetAnswerApp\GetAnswerApp.Api\bin\Debug\net6.0\GetAnswerApp.Core.dll
+C:\Projects\GetAnswerApp\GetAnswerApp.Api\bin\Debug\net6.0\GetAnswerApp.Core.pdb
+C:\Projects\GetAnswerApp\GetAnswerApp.Api\bin\Debug\net6.0\GetAnswerApp.BusinessLogic.dll
+C:\Projects\GetAnswerApp\GetAnswerApp.Api\bin\Debug\net6.0\GetAnswerApp.BusinessLogic.pdb
+C:\Projects\GetAnswerApp\GetAnswerApp.Api\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Projects\GetAnswerApp\GetAnswerApp.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Projects\GetAnswerApp\GetAnswerApp.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Projects\GetAnswerApp\GetAnswerApp.Api\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
