@@ -1,4 +1,5 @@
-**/obj/
+**/.idea/
+**/node_modules/
 **/bin/
-client/node_modules
+**/obj/
 .vs
