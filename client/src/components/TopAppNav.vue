@@ -18,11 +18,15 @@
           <inbox-icon />
         </div>
         <div class="nav__controls">
-          <primary-button class="nav__control">
-            <template #label> Sign Ip </template>
+          <primary-button class="nav__control btn-link">
+            <template #label> 
+              <router-link to="/sign-in" class="link--btn">Sign In</router-link>
+            </template>
           </primary-button>
-          <primary-button class="nav__control">
-            <template #label> Sign Ip </template>
+          <primary-button class="nav__control btn-link">
+            <template #label>
+              <router-link to="/sign-up" class="link--btn">Sign Up</router-link>
+            </template>
           </primary-button>
         </div>
       </div>
@@ -149,6 +153,10 @@ const isLoggedIn = false;
   }
   &__control {
     white-space: nowrap;
+    a { 
+      color: var(--powder700);
+      text-decoration: none;
+    }
     &:first-child {
       margin-right: 1rem;
     }

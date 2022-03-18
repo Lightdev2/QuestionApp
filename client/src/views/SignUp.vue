@@ -15,8 +15,10 @@
             <template #label> Password </template>
           </q-input>
         </div>
-        <primary-button class="page__form-btn">
-          <template #label>Sign Up</template>
+        <primary-button class="page__form-btn btn-link">
+          <template #label>
+            <router-link :to="{name: 'home'}" class="link--btn">Sign Up</router-link>
+          </template>
         </primary-button>
       </template>
     </form-block>

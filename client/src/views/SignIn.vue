@@ -11,8 +11,12 @@
             <template #label> Password </template>
           </q-input>
         </div>
-        <primary-button class="page__form-btn">
-          <template #label>Sign In</template>
+        <primary-button class="page__form-btn btn-link">
+          <template #label>
+            <router-link :to="{name: 'home'}" replace class="link--btn">
+              Sign In
+            </router-link>
+          </template>
         </primary-button>
       </template>
     </form-block>

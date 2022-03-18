@@ -5,4 +5,15 @@
   &:hover {
     opacity: 0.7;
   }
+  &--btn {
+    display: block;
+    height: 100%;
+    color: var(--powder700);
+    text-decoration: none;
+    padding: 0.6rem;
+  }
+}
+
+.btn-link {
+  padding: 0 !important;
 }
