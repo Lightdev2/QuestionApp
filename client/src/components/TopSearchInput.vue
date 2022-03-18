@@ -1,43 +1,58 @@
 <template>
-  <div class="search" @click="showDropDown">
-    <search-icon class="search__icon"/>
-    <input class="search__input" type="text" placeholder="Search" @focus="showDropDown">
-    <div v-if="isShowDropDown" class="search__dropdown">
-      <div class="search__dropdown--helpers">
-        <div>
-          <span class="search__helper-left">[метка] </span>
-          <span class="search__helper-right">поиск по метке</span>
+  <div class="wrp">
+    <div class="search" @click="showDropDown">
+      <search-icon class="search__icon search__icon--abs" />
+      <input
+        class="search__input"
+        type="text"
+        placeholder="Search"
+        @focus="showDropDown"
+      />
+      <search-icon class="search__icon search__icon--abs search__icon--mobile" />
+      <input
+        class="search__input search__input--mobile"
+        type="text"
+        placeholder="Search"
+        v-if="isShowMobileInput"
+      />
+      <div v-if="isShowDropDown" class="search__dropdown">
+        <div class="search__dropdown--helpers">
+          <div>
+            <span class="search__helper-left">[метка] </span>
+            <span class="search__helper-right">поиск по метке</span>
+          </div>
+          <div>
+            <span class="search__helper-left">user:1234 </span>
+            <span class="search__helper-right">поиск по автору</span>
+          </div>
+          <div>
+            <span class="search__helper-left">"слова в кавычках" </span>
+            <span class="search__helper-right">точная фраза</span>
+          </div>
+          <div>
+            <span class="search__helper-left">answers:0 </span>
+            <span class="search__helper-right">неотвеченные вопросы</span>
+          </div>
+          <div>
+            <span class="search__helper-left">score:3 </span>
+            <span class="search__helper-right">сообщения с рейтингом 3+</span>
+          </div>
+          <div>
+            <span class="search__helper-left">isaccepted:yes </span>
+            <span class="search__helper-right">поиск по статусу</span>
+          </div>
         </div>
-        <div>
-          <span class="search__helper-left">user:1234 </span>
-          <span class="search__helper-right">поиск по автору</span>
+        <div class="search__controls">
+          <primary-button>
+            <template #label> Задать вопрос </template>
+          </primary-button>
+          <a class="link" href="#">Справка по поиску</a>
         </div>
-        <div>
-          <span class="search__helper-left">"слова в кавычках" </span>
-          <span class="search__helper-right">точная фраза</span>
-        </div>
-        <div>
-          <span class="search__helper-left">answers:0 </span>
-          <span class="search__helper-right">неотвеченные вопросы</span>
-        </div>
-        <div>
-          <span class="search__helper-left">score:3 </span>
-          <span class="search__helper-right">сообщения с рейтингом 3+</span>
-        </div>
-        <div>
-          <span class="search__helper-left">isaccepted:yes </span>
-          <span class="search__helper-right">поиск по статусу</span>
-        </div>
-      </div>
-      <div class="search__controls">
-        <primary-button>
-          <template #label>
-            Задать вопрос
-          </template>
-        </primary-button>
-        <a class="link" href="#">Справка по поиску</a>
       </div>
     </div>
+    <button @click="toggleDropDown" class="search__btn">
+      <search-icon class="search__icon" />
+    </button>
   </div>
 </template>
 
@@ -47,35 +62,46 @@ import PrimaryButton from "@/components/PrimaryButton";
 
 export default {
   name: "TopSearchInput",
-  components: {SearchIcon, PrimaryButton}
-}
+  components: { SearchIcon, PrimaryButton },
+};
 </script>
 
 <script setup>
-import {ref, onMounted, onUnmounted} from "vue";
+import { ref, onMounted, onUnmounted } from "vue";
 
 const isShowDropDown = ref(false);
+const isShowMobileInput = ref(false);
 const showDropDown = () => {
   isShowDropDown.value = true;
-}
-const closeDropDown = ({target}) => {
-  if (!target.closest('.search')) {
+  isShowMobileInput.value = true;
+};
+const toggleDropDown = () => {
+  isShowDropDown.value = !isShowDropDown.value;
+   toggleMobileInput()
+};
+const closeDropDown = ({ target }) => {
+  if (!target.closest(".wrp")) {
     isShowDropDown.value = false;
+    isShowMobileInput.value = false;
   }
+};
+const toggleMobileInput = () => {
+  isShowMobileInput.value = !isShowMobileInput.value;
 }
-const closeDropDownByEsc = ({code}) => {
+const closeDropDownByEsc = ({ code }) => {
   if (code === "Escape") {
     isShowDropDown.value = false;
+    isShowMobileInput.value = false;
   }
-}
+};
 onMounted(() => {
-  document.addEventListener("click", closeDropDown)
-  document.addEventListener("keydown", closeDropDownByEsc)
-})
+  document.addEventListener("click", closeDropDown);
+  document.addEventListener("keydown", closeDropDownByEsc);
+});
 onUnmounted(() => {
-  document.removeEventListener("click", closeDropDown)
-  document.removeEventListener("keydown", closeDropDownByEsc)
-})
+  document.removeEventListener("click", closeDropDown);
+  document.removeEventListener("keydown", closeDropDownByEsc);
+});
 </script>
 
 <style scoped lang="scss">
@@ -85,13 +111,33 @@ onUnmounted(() => {
   align-items: center;
   position: relative;
   flex-grow: 1;
+  &__btn {
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    height: 50px;
+    @media screen and (min-width: 760px) {
+      display: none;
+    }
+    &:hover {
+      background-color: var(--black75);
+    }
+  }
 
   &__icon {
-    position: absolute;
     width: 20px;
     height: 20px;
-    left: 5px;
     fill: var(--black300);
+    &--abs {
+      position: absolute;
+      left: 5px;
+      @media screen and (max-width: 760px) {
+        display: none;
+      }
+    }
   }
 
   &__input {
@@ -107,6 +153,20 @@ onUnmounted(() => {
     &:focus {
       border-color: var(--blue300);
     }
+    @media screen and (max-width: 760px) {
+      display: none;
+    }
+    &--mobile {
+      display: none;
+      @media screen and (max-width: 760px) {
+        display: flex;
+        position: fixed;
+        top: 0;
+        right: 0;
+        top: 55px;
+        z-index: 9999;
+      }
+    }
   }
 
   &__dropdown {
@@ -117,6 +177,11 @@ onUnmounted(() => {
     border-radius: 5px;
     padding: 10px;
     box-shadow: var(--bs-light);
+    @media screen and (max-width: 760px) {
+      position: fixed;
+      top: 90px;
+      right: 0;
+    }
   }
 
   &__dropdown--helpers {
@@ -126,7 +191,7 @@ onUnmounted(() => {
   }
 
   &__helper-left {
-    color: var(--black900)
+    color: var(--black900);
   }
 
   &__helper-right {
@@ -138,6 +203,15 @@ onUnmounted(() => {
     display: flex;
     align-items: center;
     justify-content: space-between;
+  }
+}
+.wrp {
+  flex-grow: 1;
+  width: 100%;
+
+  @media screen and (max-width: 760px) {
+    display: flex;
+    justify-content: flex-end;
   }
 }
 </style>
