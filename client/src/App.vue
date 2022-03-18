@@ -1,5 +1,5 @@
 <template>
-  <div style="height: 100%">
+  <div class="app">
     <top-app-nav/>
     <div class="router-page-container">
       <router-view></router-view>
@@ -22,20 +22,20 @@ export default {
 @import "styles/normalize";
 @import "styles/colors";
 @import "styles/gloabal";
+
 * {
   box-sizing: border-box;
-  font-family: Roboto,sans-serif;
+  font-family: Roboto, sans-serif;
 }
-html,body {
-  height: 100%;
-}
-#app {
-  min-height: 100%;
-  height: 1px;
+
+.app {
+  min-height: 100vh;
+  display: flex;
   background-color: var(--black);
 }
+
 .router-page-container {
   padding-top: 50px;
-  height: 100%;
+  width: 100%;
 }
 </style>
