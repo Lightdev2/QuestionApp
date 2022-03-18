@@ -2,19 +2,28 @@
   <div class="nav">
     <div class="nav__content">
       <div class="nav__left">
-        <logo class="nav__logo"/>
+        <logo class="nav__logo nav__logo--full" />
+        <short-logo class="nav__logo nav__logo--short"></short-logo>
       </div>
-      <top-search-input/>
+      <top-search-input />
       <div class="nav__right">
-        <div class="nav__right-item nav__user">
-          <avatar/>
+        <div class="nav__right-item nav__user" v-if="isLoggedIn">
+          <avatar />
           <span title="reputation" class="nav__rep">1</span>
         </div>
         <div title="achievements" class="nav__right-item nav__icon">
-          <cup-icon/>
+          <cup-icon />
         </div>
         <div title="notifications" class="nav__right-item nav__icon">
           <inbox-icon />
+        </div>
+        <div class="nav__controls">
+          <primary-button class="nav__control">
+            <template #label> Sign Ip </template>
+          </primary-button>
+          <primary-button class="nav__control">
+            <template #label> Sign Ip </template>
+          </primary-button>
         </div>
       </div>
     </div>
@@ -25,13 +34,27 @@
 import TopSearchInput from "@/components/TopSearchInput";
 import Avatar from "@/components/Avatar";
 import Logo from "@/assets/logo";
-import CupIcon from "@/assets/cup"
+import CupIcon from "@/assets/cup";
 import InboxIcon from "@/assets/inbox";
+import ShortLogo from "@/assets/short-logo";
+import PrimaryButton from "./PrimaryButton.vue";
 
 export default {
   name: "TopAppNav",
-  components: {Avatar, TopSearchInput, Logo, CupIcon, InboxIcon}
-}
+  components: {
+    Avatar,
+    TopSearchInput,
+    Logo,
+    CupIcon,
+    InboxIcon,
+    ShortLogo,
+    PrimaryButton,
+  },
+};
+</script>
+
+<script setup>
+const isLoggedIn = false;
 </script>
 
 <style scoped lang="scss">
@@ -39,6 +62,8 @@ export default {
   position: fixed;
   width: 100%;
   background: var(--black25);
+  padding: 0 10px;
+  z-index: 9999;
 
   &__content {
     max-width: 1264px;
@@ -50,12 +75,19 @@ export default {
 
   &__left {
     margin-right: 50px;
+    @media screen and (max-width: 600px) {
+      margin-right: 0;
+    }
   }
 
   &__right {
     display: flex;
     align-items: center;
     margin-left: 50px;
+
+    @media screen and (max-width: 760px) {
+      margin-left: 0;
+    }
   }
 
   &__right-item {
@@ -79,6 +111,20 @@ export default {
 
   &__logo {
     height: 35px;
+    display: none;
+    &--full {
+      @media screen and (min-width: 600px) {
+        display: block;
+      }
+    }
+    &--short {
+      @media screen and (max-width: 600px) {
+        display: block;
+        height: 25px;
+        width: 25px;
+        margin-right: 5px;
+      }
+    }
   }
 
   &__user {
@@ -95,6 +141,17 @@ export default {
   &__rep {
     color: var(--black900);
     margin-left: 1rem;
+  }
+
+  &__controls {
+    display: flex;
+    align-items: center;
+  }
+  &__control {
+    white-space: nowrap;
+    &:first-child {
+      margin-right: 1rem;
+    }
   }
 }
 </style>
