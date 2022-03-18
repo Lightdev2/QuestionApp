@@ -2,7 +2,7 @@
   <div class="container">
     <left-side-bar>
       <template #content>
-        <router-link class="sidebar-link" exact-active-class="sidebar-link--active" to="/">Main</router-link>
+        <router-link class="sidebar-link" exact-active-class="sidebar-link--active" to="/home">Main</router-link>
         <router-link class="sidebar-link" active-class="sidebar-link--active" to="questions">Questions</router-link>
         <router-link class="sidebar-link" active-class="sidebar-link--active" to="tags">Tags</router-link>
         <router-link class="sidebar-link" active-class="sidebar-link--active" to="users">Users</router-link>

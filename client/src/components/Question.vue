@@ -11,9 +11,12 @@
       </h2>
       <p class="question__meta">
         <span class="question__meta-tags">
-        <span 
-          class="question__tag" 
-          v-for="item in Math.ceil(Math.random()* 10)" :key="item">short tag</span>
+        <tag 
+          class="question__tag"
+          v-for="item in Math.ceil(Math.random()* 5)" 
+          :key="item" 
+          :tag="'short tag'"
+        />
         </span>
         <span class="question__meta-user">
           <avatar class="question__meta-avatar"/>
@@ -28,10 +31,12 @@
 
 <script>
 import Avatar from "@/components/Avatar"
+import Tag from "@/components/Tag"
 export default {
   name: "Question",
   components: {
-    Avatar
+    Avatar,
+    Tag
   }
 };
 </script>
@@ -77,16 +82,7 @@ export default {
     }
   }
   &__tag {
-    color: var(--powder700);
-    border: 1px solid var(--powder500);
-    background-color: var(--powder100);
-    padding: 2px 5px;
-    display: block;
-    width: fit-content;
-    border-radius: 3px;
     margin-right: 3px;
-    font-size: 13px;
-    white-space: nowrap
   }
   &__content {
     display: flex;
@@ -96,10 +92,12 @@ export default {
   &__meta {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
   }
   &__meta-tags {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
   }
   &__meta-user {
     display: flex;
