@@ -12,10 +12,10 @@ export default {
 
 <style scoped>
 .left-sidebar {
-  padding-top: 30px;
   width: 164px;
   border-right: 1px solid var(--black200);
   height: 100%;
   min-width: 164px;
+  position: relative;
 }
 </style>

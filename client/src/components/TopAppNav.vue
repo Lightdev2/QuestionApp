@@ -11,15 +11,39 @@
           <avatar />
           <span title="reputation" class="nav__rep">1</span>
         </div>
-        <div title="achievements" class="nav__right-item nav__icon">
-          <cup-icon />
-        </div>
-        <div title="notifications" class="nav__right-item nav__icon">
-          <inbox-icon />
-        </div>
+        <context-block>
+          <template #icon>
+            <div title="achievements" class="nav__right-item nav__icon">
+              <cup-icon />
+            </div>
+          </template>
+          <template #content>
+            <div class="nav__context-title">
+              <span>Incoming</span>
+            </div>
+            <div class="nav__achivimets">
+              <span>No notifications yet</span>
+            </div>
+          </template>
+        </context-block>
+        <context-block>
+          <template #icon>
+            <div title="notifications" class="nav__right-item nav__icon">
+              <inbox-icon />
+            </div>
+          </template>
+          <template #content>
+            <div class="nav__context-title">
+              <span>Achievements</span>
+            </div>
+            <div class="nav__achivimets">
+              <span>No achievements yet</span>
+            </div>
+          </template>
+        </context-block>
         <div class="nav__controls">
           <primary-button class="nav__control btn-link">
-            <template #label> 
+            <template #label>
               <router-link to="/sign-in" class="link--btn">Sign In</router-link>
             </template>
           </primary-button>
@@ -42,6 +66,7 @@ import CupIcon from "@/assets/cup";
 import InboxIcon from "@/assets/inbox";
 import ShortLogo from "@/assets/short-logo";
 import PrimaryButton from "./PrimaryButton.vue";
+import ContextBlock from "@/components/ContextBlock";
 
 export default {
   name: "TopAppNav",
@@ -53,6 +78,7 @@ export default {
     InboxIcon,
     ShortLogo,
     PrimaryButton,
+    ContextBlock,
   },
 };
 </script>
@@ -153,13 +179,31 @@ const isLoggedIn = false;
   }
   &__control {
     white-space: nowrap;
-    a { 
+    a {
       color: var(--powder700);
       text-decoration: none;
     }
     &:first-child {
       margin-right: 1rem;
     }
+  }
+  &__context-title {
+    background-color: var(--black50);
+    padding: 10px;
+    span {
+      font-size: 16px;
+      color: var(--black500);
+    }
+  }
+  &__notification {
+    padding-top: 1rem;
+    color: var(--black900);
+    text-align: center;
+  }
+  &__achivimets {
+    padding-top: 1rem;
+    color: var(--black900);
+    text-align: center;
   }
 }
 </style>

@@ -2,10 +2,12 @@
   <div class="container">
     <left-side-bar>
       <template #content>
+        <div class="container__links">
         <router-link class="sidebar-link" exact-active-class="sidebar-link--active" to="/home">Main</router-link>
         <router-link class="sidebar-link" active-class="sidebar-link--active" to="questions">Questions</router-link>
         <router-link class="sidebar-link" active-class="sidebar-link--active" to="tags">Tags</router-link>
         <router-link class="sidebar-link" active-class="sidebar-link--active" to="users">Users</router-link>
+        </div>
       </template>
     </left-side-bar>
     <div class="container__page">
@@ -28,6 +30,10 @@ export default {
   margin: 0 auto;
   height: 100%;
   display: flex;
+  &__links {
+    position: sticky;
+    top: 80px;
+  }
   &__page {
     padding: 10px 0;
     padding-top: 30px;

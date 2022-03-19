@@ -50,6 +50,9 @@ export default {
   &:first-child {
     border-top: 1px solid var(--black200);
   }
+  &:last-child {
+    border: none;
+  }
   &__summary {
     width: 108px;
     display: flex;

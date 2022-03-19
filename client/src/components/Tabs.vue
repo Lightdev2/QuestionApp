@@ -41,12 +41,13 @@ const switchTab = (_tab) => {
 <style scoped lang="scss">
 .tabs {
   border-radius: 5px;
-  border: 1px solid var(--black300);
+  display: flex;
+  flex-wrap: wrap;
   &__tab {
     background: transparent;
     color: var(--black300);
     outline: none;
-    border: none;
+    border: 1px solid var(--black300);
     cursor: pointer;
     white-space: nowrap;
     padding: 10px;

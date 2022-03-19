@@ -6,6 +6,7 @@ import Questions from "../views/Questions.vue";
 import Users from "../views/Users.vue";
 import Tags from "../views/Tags.vue";
 import Main from "../views/Main.vue";
+import AskQuestion from "../views/AskQuestion.vue";
 
 const routes = [
   {
@@ -32,6 +33,11 @@ const routes = [
         path: "users",
         name: "users",
         component: Users
+      },
+      {
+        path: 'ask-question',
+        name: 'ask-question',
+        component: AskQuestion
       }
     ]
   },
