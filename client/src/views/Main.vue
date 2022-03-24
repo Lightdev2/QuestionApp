@@ -42,7 +42,7 @@ import Question from "@/components/Question";
 import RightSidebar from "@/components/RightSidebar"
 import FollowingTagsBlock from "@/components/FollowingTagsBlock"
 import IgnoredTagsBlock from "@/components/IgnoredTagsBlock"
-
+import { ref } from "vue";
 export default {
   name: "Main",
   components: {
@@ -59,8 +59,6 @@ export default {
 
 <script setup>
 const tabs = ["Interesting", "Popular", "During the week", "During the month"];
-import { ref } from "vue";
-
 const activeTab = ref(tabs[1]);
 
 const handleTab = (_tab) => {

@@ -13,7 +13,7 @@
 const activeBlock = ref(0)
 let idCounter = 0;
 export default {
-  name: "ContentBlock",
+  name: "ContextBlock",
 };
 </script>
 

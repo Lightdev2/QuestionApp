@@ -12,6 +12,7 @@ export default {
 
 <style scoped>
 .sidebar {
-  width: 300px
+  min-width: 300px;
+  max-width: 300px;
 }
 </style>
