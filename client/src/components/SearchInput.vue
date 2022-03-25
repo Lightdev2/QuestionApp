@@ -26,6 +26,7 @@ export default {
   position: relative;
   border: 1px solid var(--black200);
   border-radius: 5px;
+  min-height: 40px;
   &__icon {
     position: absolute;
     width: 20px;

@@ -1,53 +1,15 @@
 <template>
   <div class="pagination">
-    <button class="pagination__btn" v-if="current > 1" @click="emitNext(props.current - 1)">Back</button>
     <button
+      v-for="(item, idx) in pages"
+      :key="idx"
       class="pagination__btn"
-      @click="emitNext(1)"
+      @click="emitNext(item)"
       :class="{
-        'pagination__btn--active': isCurrent(1),
+        'pagination__btn--active': isCurrent(item),
       }"
     >
-      1
-    </button>
-    <div v-if="current >= 5" class="pagination__dots">...</div>
-    <template v-if="current < 5">
-      <button
-        @click="emitNext(i)"
-        class="pagination__btn"
-        :class="{
-          'pagination__btn--active': isCurrent(i),
-        }"
-        v-for="i in [2, 3, 4, 5]"
-        :key="i"
-      >
-        {{ i }}
-      </button>
-    </template>
-    
-    <template v-else-if="current + 5 <= count">
-      <button
-        @click="emitNext(i)"
-        class="pagination__btn"
-        :class="{
-          'pagination__btn--active': isCurrent(i),
-        }"
-        v-for="i in range(current - 2, current + 2)"
-        :key="i"
-      >
-        {{ i }}
-      </button>
-    </template>
-    <div v-if="current >= 5" class="pagination__dots">...</div>
-    <button class="pagination__btn" v-if="current !== props.count" @click="emitNext(props.current + 1)">Next</button>
-    <button
-      @click="emitNext(props.count)"
-      class="pagination__btn"
-      :class="{
-        'pagination__btn--active': isCurrent(0),
-      }"
-    >
-      {{ props.count }}
+      {{ item }}
     </button>
   </div>
 </template>
@@ -59,15 +21,47 @@ export default {
 </script>
 
 <script setup>
-import { defineProps, defineEmits} from "vue";
+import { defineProps, defineEmits, computed } from "vue";
 const props = defineProps(["current", "count"]);
-const emits = defineEmits(["next"])
+const emits = defineEmits(["next"]);
 const isCurrent = (_num) => {
   return _num === props.current;
 };
 const emitNext = (_value) => {
-  emits("next", _value)
-}
+  if (_value == "...") return;
+  if (_value == "Next") {
+    emits("next", props.current + 1);
+    return;
+  }
+  if (_value == "Back") {
+    emits("next", props.current - 1);
+    return;
+  }
+  emits("next", _value);
+};
+
+const pages = computed(() => {
+  let seq = [];
+  if (props.current < 5) {
+    seq = [1, 2, 3, 4, 5, "...", props.count, "Next"];
+    if (props.current > 1) seq.unshift("Back");
+    return seq;
+  }
+  if((props.current + 3) >= props.count || props.current === props.count) {
+    seq = ['Back', 1, '...', ...range(props.count - 4, props.count)]
+    if(props.current !== props.count) {
+      seq.push("Next")
+    }
+    console.log("asd")
+    return seq;
+  }
+  if(props.current >= 5) {
+    seq = ['Back', 1];
+    seq = [...seq,'...', ...range(props.current - 2, props.current + 2),'...', props.count, 'Next']
+    return seq;
+  }
+  return seq;
+});
 const range = (_start, _end) => {
   const range = [];
   for(let i = _start; i <= _end; i++) {
@@ -104,7 +98,7 @@ const range = (_start, _end) => {
     color: var(--black700);
     display: flex;
     align-items: center;
-    justify-content:center;
+    justify-content: center;
     margin-right: 5px;
   }
 }

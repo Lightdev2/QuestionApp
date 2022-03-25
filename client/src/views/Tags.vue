@@ -42,8 +42,8 @@ export default {
 import {ref} from "vue"
 const tabs = ['Popular','Name','New']
 const activeTab = ref(tabs[0]);
-const pagesCount = ref(10);
-const curPage = ref(0);
+const pagesCount = ref(100);
+const curPage = ref(1);
 const tag = {
   title: 'javascript',
   count: 1000,
