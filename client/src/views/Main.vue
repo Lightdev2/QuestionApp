@@ -5,7 +5,7 @@
       <q-title> Questions </q-title>
       <essential-button>
         <template #label>
-          <router-link :to="{name: 'ask-question'}">
+          <router-link :to="{name: 'ask-question'}" class="main__link">
             Ask a Question 
           </router-link>
         </template>
@@ -36,7 +36,7 @@
 
 <script>
 import QTitle from "@/components/QTitle";
-import TabsComponent from "@/components/Tabs";
+import TabsComponent from "@/components/TabsComponent";
 import EssentialButton from "@/components/EssentialButton";
 import Question from "@/components/Question";
 import RightSidebar from "@/components/RightSidebar"
@@ -90,6 +90,10 @@ const handleTab = (_tab) => {
   }
   &__sidebar-block {
     margin-bottom: 1rem;
+  }
+  &__link {
+    text-decoration: none;
+    color: var(--black900);
   }
 }
 </style>

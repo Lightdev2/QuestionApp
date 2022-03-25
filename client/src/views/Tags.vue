@@ -23,7 +23,7 @@
 <script>
 import QTitle from "@/components/QTitle";
 import SearchInput from "@/components/SearchInput";
-import TabsComponent from "@/components/Tabs";
+import TabsComponent from "@/components/TabsComponent";
 import TagBlock from "@/components/TagBlock"
 import PaginationComponent from "@/components/PaginationComponent"
 export default {

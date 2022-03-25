@@ -3,13 +3,14 @@
     <div class="input__label">
       <slot name="label"></slot>
     </div>
-    <input class="input__input" type="text" />
+    <input class="input__input" type="text" :placeholder="$props?.placeholder" />
   </label>
 </template>
 
 <script>
 export default {
   name: "QInput",
+  props: ['placeholder']
 };
 </script>
 

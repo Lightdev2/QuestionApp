@@ -9,6 +9,9 @@
       <h2 class="question__title">
         <a href="#">Some sample title of question</a>
       </h2>
+      <p class="question__desc">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, similique molestiae odio necessitatibus quasi consequatur architecto veritatis modi, harum nemo quas sed omnis error. Tempore nesciunt explicabo optio quas! Voluptatum?
+      </p>
       <p class="question__meta">
         <span class="question__meta-tags">
         <tag 
@@ -55,6 +58,7 @@ export default {
   }
   &__summary {
     width: 108px;
+    min-width: 108px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -73,11 +77,16 @@ export default {
     padding: 2px 3px;
     margin-bottom: 5px;
   }
+  &__desc {
+    color: var(--black700);
+  }
   &__shows {
     color: var(--black900);
   }
   &__title {
     margin: 0;
+    font-size: 17px;
+    font-weight: 500;
     padding: 0;
     a {
       text-decoration: none;

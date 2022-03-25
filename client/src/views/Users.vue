@@ -28,7 +28,7 @@
 <script>
 import QTitle from "@/components/QTitle"
 import SearchInput from "../components/SearchInput.vue"
-import TabsComponent from "@/components/Tabs"
+import TabsComponent from "@/components/TabsComponent"
 import PaginationComponent from "@/components/PaginationComponent"
 export default {
   name: "Users",
