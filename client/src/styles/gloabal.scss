@@ -28,3 +28,22 @@
   border: 0;
   clip: rect(0 0 0 0);
 }
+
+* {
+  scrollbar-color: var(--black300) var(--black50);
+  scrollbar-width: thin;
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+  background-color: transparent;
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+  background-color: var(--black100);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--black200);
+}

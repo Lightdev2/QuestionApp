@@ -38,7 +38,10 @@ const routes = [
       {
         path: 'ask-question',
         name: 'ask-question',
-        component: AskQuestion
+        component: AskQuestion,
+        meta: {
+          sidebar: false
+        }
       }
     ]
   },

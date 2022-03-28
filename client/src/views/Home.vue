@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <left-side-bar>
+    <left-side-bar v-if="isShowSidebar">
       <template #content>
         <div class="container__links">
         <router-link class="sidebar-link" exact-active-class="sidebar-link--active" to="/home">Main</router-link>
@@ -21,6 +21,15 @@ import LeftSideBar from '../components/LeftSideBar.vue'
 export default {
   components: { LeftSideBar },
   name: "Home",
+  computed: { 
+    isShowSidebar() {
+      const state = this.$route?.meta?.sidebar;
+      if(state !== undefined) {
+        return state
+      }
+      return true;
+    }
+  }
 }
 </script>
 
