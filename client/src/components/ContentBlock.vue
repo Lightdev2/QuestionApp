@@ -1,6 +1,6 @@
 <template>
   <div class="block">
-    <div class="block__head">
+    <div class="block__head" v-if="$props.head">
       <slot name="head"></slot>
     </div>
     <div class="block__body">
@@ -12,6 +12,13 @@
 <script>
 export default {
   name: "ContentBlock",
+  props: {
+    head: {
+      type: Boolean,
+      required: false,
+      default: true
+    }
+  }
 };
 </script>
 

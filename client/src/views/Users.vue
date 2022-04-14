@@ -1,55 +1,68 @@
 <template>
-<div class="users">
-  <q-title class="users__title">
-    Users
-  </q-title>
-  <div class="users__tools">
-    <search-input placeholder="Filter by user" class="users__input"/>
-    <tabs-component :tabs="tabs" :active-tab="activeTab" class="users__tabs"/>
-  </div>
-  <div class="users__content">
-    <div v-for="i in 36" :key="i" class="users__user">
-      <div class="users__avatar">
-
-      </div>
-      <div class="users__user-info">
-        <span class="users__name">Crazy Elf</span>
-        <span class="users__home">Moskva, Москва, Россия</span>
-        <span class="users__rep">999</span>
+  <div class="users">
+    <q-title class="users__title"> Users </q-title>
+    <div class="users__tools">
+      <search-input placeholder="Filter by user" class="users__input" />
+      <tabs-component
+        :tabs="tabs"
+        :active-tab="activeTab"
+        class="users__tabs"
+      />
+    </div>
+    <div class="users__content">
+      <div v-for="i in 36" :key="i" class="users__user">
+        <div class="users__avatar"></div>
+        <div class="users__user-info">
+          <span class="users__name">Crazy Elf</span>
+          <router-link
+            :to="{
+              name: 'user',
+              params: {
+                id: 1,
+              },
+            }"
+            >Crazy Elf</router-link
+          >
+          <span class="users__home">Moskva, Москва, Россия</span>
+          <span class="users__rep">999</span>
+        </div>
       </div>
     </div>
+    <div class="users__pagination">
+      <pagination-component
+        :count="pagesCount"
+        :current="curPage"
+        @next="handleNext"
+      />
+    </div>
   </div>
-  <div class="users__pagination">
-    <pagination-component :count="pagesCount" :current="curPage" @next="handleNext"/>
-  </div>
-</div>
 </template>
 
 <script>
-import QTitle from "@/components/QTitle"
-import SearchInput from "../components/SearchInput.vue"
-import TabsComponent from "@/components/TabsComponent"
-import PaginationComponent from "@/components/PaginationComponent"
+import QTitle from "@/components/QTitle";
+import SearchInput from "../components/SearchInput.vue";
+import TabsComponent from "@/components/TabsComponent";
+import PaginationComponent from "@/components/PaginationComponent";
 export default {
   name: "Users",
   components: {
     QTitle,
     SearchInput,
     TabsComponent,
-    PaginationComponent
-}
-}
+    PaginationComponent,
+  },
+};
 </script>
 
 <script setup>
-import {ref} from "vue"
-const tabs = ['Reputation', 'New', 'Moderators', 'Editors']
+import { ref } from "vue";
+const tabs = ["Reputation", "New", "Moderators", "Editors"];
 const activeTab = tabs[0];
 const curPage = ref(1);
 const pagesCount = ref(100);
 const handleNext = (_val) => {
   curPage.value = _val;
-}
+};
 </script>
 
 <style scoped lang="scss">

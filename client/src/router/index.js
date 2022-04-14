@@ -7,6 +7,7 @@ import Users from "../views/Users.vue";
 import Tags from "../views/Tags.vue";
 import Main from "../views/Main.vue";
 import AskQuestion from "../views/AskQuestion.vue";
+import User from "../views/User.vue";
 
 const routes = [
   {
@@ -42,6 +43,11 @@ const routes = [
         meta: {
           sidebar: false
         }
+      },
+      {
+        path: "users/:id",
+        name: "user",
+        component: User
       }
     ]
   },
